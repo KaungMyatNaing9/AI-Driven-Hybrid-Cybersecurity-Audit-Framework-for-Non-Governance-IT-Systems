@@ -36,3 +36,9 @@ Small and medium private organizations rarely have the resources for deep cybers
 5. Output audit report
 
 ---
+
+## Loom Recordings
+**Begin watching in order**
+1. https://www.loom.com/share/deba290d5bbe484d9c08340cd78b7496?sid=0ee2ebff-36b8-42d9-8f8d-70b3bb16697d
+2. https://www.loom.com/share/cb82c9d5b63a43bd9d5422260bbf7f71?sid=880a6ab2-be7f-4363-8f7f-6a9aa701efe3
+3. 
