@@ -9,6 +9,7 @@ Proof-of-concept prototype that applies a **hybrid auditing logic** to cybersecu
 
 ## Project status
 **Phase:** Design & prototype (literature survey + small proof-of-concept).
+
 **Deliverables:** Prototypes, compliance mapping, bibliography, evaluation results, final report, and presentation.
 
 ---
