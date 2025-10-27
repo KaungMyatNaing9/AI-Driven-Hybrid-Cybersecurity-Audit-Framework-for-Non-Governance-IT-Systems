@@ -1,0 +1,64 @@
+{
+  "task": "correlate_and_assess",
+  "framework": [
+    "NIST-800-53r5",
+    "CIS-Controls-v8"
+  ],
+  "org_context": {
+    "business_units": [
+      "Demo"
+    ],
+    "crown_jewels": [],
+    "risk_appetite": "moderate"
+  },
+  "policy": {
+    "severity_buckets": {
+      "critical": [
+        90,
+        100
+      ],
+      "high": [
+        75,
+        89
+      ],
+      "medium": [
+        50,
+        74
+      ],
+      "low": [
+        0,
+        49
+      ]
+    },
+    "auto_remediation_allowed": false,
+    "confidence_threshold": 0.72
+  },
+  "assets": [],
+  "evidence": [],
+  "control_library": [
+    {
+      "control_id": "CIS-4.6",
+      "name": "Strong Authentication"
+    },
+    {
+      "control_id": "AC-2",
+      "name": "Account Management"
+    },
+    {
+      "control_id": "SI-4",
+      "name": "System Monitoring"
+    }
+  ],
+  "instructions": [
+    "Group related evidence into incidents.",
+    "Map to controls; compute risk_score and severity.",
+    "Explain rationale; cite evidence_ids.",
+    "If insufficient evidence, needs_human=true and ask up to 3 questions.",
+    "Respond ONLY with JSON under key 'incidents'."
+  ],
+  "output_schema": {
+    "incidents": [
+      {}
+    ]
+  }
+}
