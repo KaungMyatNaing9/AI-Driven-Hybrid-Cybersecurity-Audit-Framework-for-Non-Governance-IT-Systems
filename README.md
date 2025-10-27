@@ -3,14 +3,14 @@
 ---
 
 ## One-line summary
-Proof-of-concept prototype that applies a **hybrid auditing logic** to cybersecurity for private (non-governance) IT systems.
+An AI driven hybrid framework that integrates classical machine-learning anomaly detection with LLM-based audit reasoning to automatically identify, assess, and explain security risks in non-governance IT systems then get human to validate.
 
 ---
 
 ## Project status
-**Phase:** Design & prototype (literature survey + small proof-of-concept).
+**Phase:** Functional prototype and evaluation
 
-**Deliverables:** Prototypes, compliance mapping, bibliography, evaluation results, final report, and presentation.
+**Deliverables:** Prototypes(ML model results, LLM integration demo), compliance mapping, bibliography, evaluation results, final report, and presentation.
 
 ---
 
@@ -20,20 +20,44 @@ Small and medium private organizations rarely have the resources for deep cybers
 ---
 
 ## Research objectives
-* **RO1 - Feasibility:** Building a small prototype demonstrating AI-based traffic analysis.
-*  **RO2 — Compliance mapping:** Map detected issues to a set of compliance controls.
-*  **RO3 — Evaluation:** Measure effectiveness of the prototype.
-*  **RO4 — Recommendations:** Identify limitations, ethical issues, and next steps.
+* **RO1 - Feasibility:** Implement and evaluate multiple ML models on the UNSW-NB15 dataset for intrusion and anomaly detection.
+*  **RO2 — Hybrid Intelligence:** Combine ML outputs with a Large Language Model(OpenAI) to generate structured audit findings, control mappings, and remediation steps.
+*  **RO3 — Evaluation:** Compare model performance and test LLM interpretability, reliability, and token limits.
+*  **RO4 — Recommendations:** Identify limitations, ethical issues, and next steps. Assess whether LLM-based reasoning is credible for auditing tasks or if results depend more on dataset quality and prompt design.
 
 ---
 
 ## Prototype overview
 **High-level flow**
-1. Ingest logs → preprocess → extract data
-2. Anomaly detection
-3. Risk scoring
-4. Map findings → compliance controls
-5. Output audit report
+Data ingestion + preprocessing: Clean UNSW-NB15 network traffic dataset.
+
+ML classification:
+
+Models: Isolation Forest, Logistic Regression, Gradient Boosting, XGBoost.
+
+Logistic Regression for explainable, auditable baselines.
+
+XGBoost for higher recall and aggressive threat catching.
+
+Evidence generation: Top-risk predictions exported as JSON evidence.
+
+LLM reasoning: OpenAI GPT-4o-mini converts evidence into audit incidents, risk scores, control mappings, and remediation recommendations.
+
+Human-in-the-loop review: Analysts verify or adjust the LLM’s suggested incidents.
+
+Results visualization: Confusion matrices, ROC/PR curves, and JSON-formatted incident reports in the audit_ml_models/results folder.
+
+---
+
+## Key Findings
+Logistic Regression achieved ≈ 85% accuracy / 0.86 F1, best overall balance.
+
+XGBoost achieved ≈ 0.76 F1, with stronger recall for attacks.
+
+Isolation Forest over-flagged anomalies but served as a good pre-filter.
+
+LLM successfully produced a structured incident report after prompt optimization, output quality heavily depends on prompt clarity + evidence size rather than raw model accuracy.
+
 
 ---
 
